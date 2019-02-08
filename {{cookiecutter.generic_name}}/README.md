@@ -33,7 +33,7 @@ La gestion de version repose sur le système [SemVer](http://semver.org/). Voir 
 Si vous souhaitez contribuer au projet, merci de créer une _issue_ ou de _forker_ ce projet et de créer une nouvelle branche. Toutes les _pull requests_ sont les bienvenues !
 
 ## Licence
-Ce projet est diffusé sous la licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus de details.
+Ce projet est diffusé sous la licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de details.
 
 ## Contributeurs
  * **{{cookiecutter.full_name}}** - [{{cookiecutter.github_username}}](https://github.com/{{cookiecutter.github_username}})
@@ -72,7 +72,7 @@ We use [SemVer](http://semver.org/) for versioning. See the [CHANGELOG.md](CHANG
 If you'd like to contribute, please raise an issue or fork the repository and use a feature branch. Pull requests are warmly welcome.
 
 ## Licensing
-The code in this project is licensed under MIT licencse. See the [LICENCE](LICENCE) file for details.
+The code in this project is licensed under MIT license. See the [LICENSE](LICENSE) file for details.
 
 ## Contributors
  * **{{cookiecutter.full_name}}** - [{{cookiecutter.github_username}}](https://github.com/{{cookiecutter.github_username}})
