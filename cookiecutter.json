@@ -1,0 +1,22 @@
+{
+  "full_name": "",
+  "email": "",
+  "github_username": "",
+  "github_token": "",
+  "organization_full_name": "My Human Kit",
+  "github_organization": "myhumankit",
+  "wikilab_username": "",
+  "wikilab_password": "",
+  "project_name": "Fusée intergalactique",
+  "short_description": "Un super vaisseau spatial pour partir à la conquête de la galaxie !",
+  "generic_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "geslab_url": "https://dev.humanlab.me/projet/{{ cookiecutter.generic_name }}/",
+  "wikilab_url": "http://wikilab.myhumankit.org/index.php?title=Projets:{{ cookiecutter.project_name.replace(' ', '_').capitalize() }}",
+  "docs_url": "http://myworkshop.blink-studio.com/myhumankit/{{ cookiecutter.generic_name }}",
+  "framateam_url": "https://framateam.org/myhumankit/channels/{{ cookiecutter.generic_name }}",
+  "version": "0.1.0",
+  "language_code": ["fr", "en"],
+  "_copy_without_render": [
+        "*.html"
+    ]
+}

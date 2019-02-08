@@ -1,0 +1,41 @@
+{
+    "project": {
+        "full_name": "{{ cookiecutter.project_name }}",
+        "slug": "{{ cookiecutter.generic_name }}",
+        "short_description": "{{ cookiecutter.short_description }}",
+        "lang": "{{ cookiecutter.language_code }}",
+        "version": "{{ cookiecutter.version }}",
+        "featured_image": {
+            "url": "images/mhk_logotype.svg"
+        },
+        "links": [
+            {
+                "url": "{{ cookiecutter.geslab_url }}",
+                "title": "page d'accueil du projet sur le GesLab",
+                "fa5_icon": "fas fa-home"
+            },
+            {
+                "url": "{{ cookiecutter.wikilab_url }}",
+                "title": "page wiki du projet sur le wiki du Humanlab",
+                "fa5_icon": "fab fa-wikipedia-w"
+            },
+            {
+                "url": "{{ cookiecutter.framateam_url }}",
+                "title": "canal de discussion sur Framateam",
+                "fa5_icon": "fas fa-comments"
+            },
+            {
+                "url": "https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.generic_name }}",
+                "title": "code source de la documentation sur GitHub",
+                "fa5_icon": "fab fa-github"
+            }
+        ],
+        "contributors": [
+            {
+                "full_name": "{{ cookiecutter.full_name }}",
+                "email": "{{ cookiecutter.email }}",
+                "github_username": "{{ cookiecutter.github_username }}"
+            }
+        ]
+    }
+}
