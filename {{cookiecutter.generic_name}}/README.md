@@ -1,5 +1,5 @@
 # {{cookiecutter.project_name}}
-{{cookiecutter.project_short_description}}
+{{cookiecutter.short_description}}
 
 ![featured_image](images/mhk_logotype.svg)
 
