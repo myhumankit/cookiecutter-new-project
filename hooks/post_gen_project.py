@@ -17,11 +17,7 @@ else:
 
 # on crée le dépôt GitHub
 r = requests.post('https://api.github.com/orgs/{{cookiecutter.github_organization}}/repos',
-                  data = '{
-                             "name": "{{cookiecutter.generic_name}}",
-                             "description": "{{cookiecutter.short_description}}",
-                             "homepage": "{{cookiecutter.docs_url}}"
-                          }',
+                  data = '{"name":"{{cookiecutter.generic_name}}","description":"{{cookiecutter.short_description}}","homepage":"{{cookiecutter.docs_url}}"}',
                   headers={'Authorization': 'token {{cookiecutter.github_token}}'}
                  )
 if r.status_code != 201: # on attend le code 201
