@@ -1,3 +1,4 @@
+import json
 import requests
 import subprocess
 
@@ -16,8 +17,11 @@ else:
 
 
 # on crée le dépôt GitHub
+# on s'assure que le json est valid
+data = json.loads('{"name":"{{cookiecutter.generic_name}}","description":"{{cookiecutter.short_description}}","homepage":"{{cookiecutter.docs_url}}"}')
+data = json.dumps(data)
 r = requests.post('https://api.github.com/orgs/{{cookiecutter.github_organization}}/repos',
-                  data = '{"name":"{{cookiecutter.generic_name}}","description":"{{cookiecutter.short_description}}","homepage":"{{cookiecutter.docs_url}}"}',
+                  data = data,
                   headers={'Authorization': 'token {{cookiecutter.github_token}}'}
                  )
 if r.status_code != 201: # on attend le code 201
