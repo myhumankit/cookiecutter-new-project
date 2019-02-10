@@ -6,7 +6,7 @@
         "lang": "{{ cookiecutter.language_code }}",
         "version": "{{ cookiecutter.version }}",
         "featured_image": {
-            "url": "images/mhk_logotype.svg"
+            "url": "images/mhk_logotype.png"
         },
         "links": [
             {
