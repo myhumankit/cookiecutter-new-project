@@ -12,8 +12,8 @@
   "generic_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "geslab_url": "https://dev.humanlab.me/projet/{{ cookiecutter.generic_name }}/",
   "wikilab_url": "http://wikilab.myhumankit.org/index.php?title=Projets:{{ cookiecutter.project_name.replace(' ', '_').capitalize() }}",
-  "docs_url": "http://myworkshop.blink-studio.com/myhumankit/{{ cookiecutter.generic_name }}",
-  "framateam_url": "https://framateam.org/myhumankit/channels/{{ cookiecutter.generic_name }}",
+  "docs_url": "https://docs.humanlab.me/{{ cookiecutter.github_organization }}/{{ cookiecutter.generic_name }}",
+  "framateam_url": "https://framateam.org/{{ cookiecutter.github_organization }}/channels/{{ cookiecutter.generic_name }}",
   "version": "0.1.0",
   "language_code": ["fr", "en"],
   "_copy_without_render": [
