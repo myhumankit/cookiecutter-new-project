@@ -50,7 +50,7 @@ else:
 #    -> ajout des liens du projet sur le GesLab
 #    -> création manuelle du canal framateam
 print('################################################################################')
-print('# Ajouter manullement les liens suivants dans la page du projet sur le GesLab  #')
+print('# Ajouter manuellement les liens suivants dans la page du projet sur le GesLab #')
 print('################################################################################')
 print('Intitulé : Page du projet sur wikilab')
 print('URL      : {{cookiecutter.wikilab_url}}')
