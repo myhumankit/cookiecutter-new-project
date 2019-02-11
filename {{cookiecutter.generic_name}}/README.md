@@ -1,7 +1,7 @@
 # {{cookiecutter.project_name}}
 {{cookiecutter.short_description}}
 
-![featured_image](images/mhk_logotype.svg)
+![featured_image](images/mhk_logotype.png)
 
 ## Liens
  * [documentation du projet]({{cookiecutter.docs_url}})
