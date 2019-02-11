@@ -6,4 +6,4 @@ Placer dans ce dossier les images, photos ou vidéos à intégrer dans la docume
 ---
 
 ## Usage
-This folder contains the images, pictures and videos used in the documentation.
+This folder contains images, pictures and videos used in the documentation.
