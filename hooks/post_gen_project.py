@@ -49,4 +49,24 @@ else:
 # on informe l'utilisateur :
 #    -> ajout des liens du projet sur le GesLab
 #    -> création manuelle du canal framateam
-# --> to do
+print('################################################################################')
+print('# Ajouter manullement les liens suivants dans la page du projet sur le GesLab  #')
+print('################################################################################')
+print('Intitulé : Page du projet sur wikilab')
+print('URL      : {{cookiecutter.wikilab_url}}')
+print('--------------------------------------------------------------------------------')
+print('Intitulé : Canal de discussion du projet sur Framateam')
+print('URL      : {{cookiecutter.framateam_url}}')
+print('--------------------------------------------------------------------------------')
+print('Intitulé : Documentation du projet')
+print('URL      : {{cookiecutter.docs_url}}')
+print('--------------------------------------------------------------------------------')
+print('Intitulé : Dépôt GitHub du projet')
+print('URL      : https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.generic_name}}')
+print('################################################################################')
+print('# Créer un nouveau canal sur l\'équipe My Human Kit de Framateam                #')
+print('################################################################################')
+print('Nom         : {{cookiecutter.generic_name}}')
+print('Description : {{cookiecutter.short_description}}')
+print('Entête      : [{{cookiecutter.project_name}}](https://dev.humanlab.me/projet/{{cookiecutter.generic_name}}/)')
+print('--------------------------------------------------------------------------------')
