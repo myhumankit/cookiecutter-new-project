@@ -12,8 +12,106 @@ if r.status_code == 200:
     print('INFO: this project already exists on WikiLab.')
 else:
     print('INFO: project not found on WikiLab.')
-    # création à partir du template
-    # --> to do
+    S = requests.Session()
+    URL = "http://wikilab.myhumankit.org/api.php"
+    text = '''== Description du projet ==
+{{ cookiecutter.short_description }}
+
+== Liens utiles ==
+* [{{cookiecutter.geslab_url}} Page du projet sur le GesLab]
+* [{{cookiecutter.framateam_url}} Canal de discussion du projet sur Framateam]
+* [{{cookiecutter.docs_url}} Documentation finale du projet]
+* [https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.generic_name}} Dépôt GitHub du projet]
+
+== Cahier des charges ==
+
+== Analyse de l'existant ==
+
+== Equipe (Porteur de projet et contributeurs) ==
+* Porteur de projet
+* Contributeurs
+* Animateur (coordinateur du projet)
+* Fabmanager référent
+** {{cookiecutter.full_name}} ([mailto:{{cookiecutter.email}}?Subject=%5B{{cookiecutter.generic_name}}%5D%20demande%20d%27information {{cookiecutter.email}}])
+* Responsable de documentation
+
+== Matériel nécessaire ==
+
+== Outils nécessaires ==
+
+== Coût ==
+
+== Délai estimé ==
+
+== Fichiers source ==
+
+== Étapes de fabrication pas à pas ==
+
+== Durée de fabrication du prototype final ==
+
+
+[[Category:Projets]]'''
+
+    # Step 1: Retrieve a login token
+    PARAMS_1 = {
+        "action": "query",
+        "meta": "tokens",
+        "type": "login",
+        "format": "json"
+    }
+
+    R = S.get(url=URL, params=PARAMS_1)
+    if not R.ok:
+        print('ERROR: error retrieving a login token on wikilab!')
+    else:
+        print('INFO: retrieve a login token successfully on wikilab.')
+        DATA = R.json()
+        LOGIN_TOKEN = DATA["query"]["tokens"]["logintoken"]
+
+        # Step 2: Send a post request to log in.
+        PARAMS_2 = {
+            "action": "login",
+            "lgname": "{{cookiecutter.wikilab_username}}",
+            "lgpassword": "{{cookiecutter.wikilab_password}}",
+            "format": "json",
+            "lgtoken": LOGIN_TOKEN
+        }
+
+        R = S.post(URL, data=PARAMS_2)
+        if not R.ok:
+            print('ERROR: error login on wikilab!')
+        else:
+            print('INFO: successfull login on wikilab.')
+
+            # Step 3: While logged in, retrieve a CSRF token
+            PARAMS_3 = {
+                "action": "query",
+                "meta": "tokens",
+                "format": "json"
+            }
+
+            R = S.get(url=URL, params=PARAMS_3)
+            if not R.ok:
+                print('ERROR: error retrieving a CSRF token on wikilab!')
+            else:
+                print('INFO: retrieve a CSRF token successfully on wikilab.')
+                DATA = R.json()
+                CSRF_TOKEN = DATA["query"]["tokens"]["csrftoken"]
+
+                # Step 4: Send a post request to edit a page
+                PARAMS_4 = {
+                    "action": "edit",
+                    "title": "Projets:{{cookiecutter.project_name}}",
+                    "format": "json",
+                    "text": text,
+                    "token": CSRF_TOKEN
+                }
+
+                R = S.post(URL, data=PARAMS_4)
+                if R.ok:
+                    print('INFO: wikilab page successfully created.')
+                else:
+                    print('ERROR: error creating wikilab page!')
 
 
 # on crée le dépôt GitHub
