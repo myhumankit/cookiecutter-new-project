@@ -37,7 +37,7 @@ A _Personal access token_ is required to automatically create a new GitHub repos
 Generate a new project with [new-project Makefile](https://github.com/myhumankit/new-project):
 
 ```
-$ cd ~/dev/
+$ cd ~/dev/new-project/
 $ make new
 ```
 
