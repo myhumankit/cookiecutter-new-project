@@ -1,4 +1,8 @@
 {
+  "project_name": "Nouveau projet",
+  "generic_name": "{{ cookiecutter.project_name|slug }}",
+  "wikilab_name": "{{ cookiecutter.project_name|replace(' ', '_')|slug|capitalize }}",
+  "short_description": "Un super projet pour partir à la conquête du monde !",
   "full_name": "",
   "email": "",
   "github_username": "",
@@ -7,16 +11,14 @@
   "github_organization": "myhumankit",
   "wikilab_username": "",
   "wikilab_password": "",
-  "project_name": "Fusée intergalactique",
-  "short_description": "Un super vaisseau spatial pour partir à la conquête de la galaxie !",
-  "generic_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "geslab_url": "https://dev.humanlab.me/projet/{{ cookiecutter.generic_name }}/",
-  "wikilab_url": "http://wikilab.myhumankit.org/index.php?title=Projets:{{ cookiecutter.project_name.replace(' ', '_').capitalize() }}",
+  "wikilab_url": "http://wikilab.myhumankit.org/index.php?title=Projets:{{ cookiecutter.wikilab_name }}",
   "docs_url": "https://docs.humanlab.me/{{ cookiecutter.github_organization }}/{{ cookiecutter.generic_name }}",
   "framateam_url": "https://framateam.org/{{ cookiecutter.github_organization }}/channels/{{ cookiecutter.generic_name }}",
   "version": "0.1.0",
   "language_code": ["fr", "en"],
   "_copy_without_render": [
         "*.html"
-    ]
+    ],
+  "_extensions": ["jinja2_slug.SlugExtension"]
 }

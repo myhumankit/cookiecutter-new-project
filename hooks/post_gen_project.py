@@ -7,7 +7,7 @@ import subprocess
 # si non :
 #     -> message : "INFO : creation of a new page on wikilab"
 #     -> créer une nouvelle page sur wikilab
-r = requests.get('{{cookiecutter.wikilab_url}}')
+r = requests.get('{{cookiecutter.wikilab_url|e}}')
 if r.status_code == 200:
     print('INFO: this project already exists on WikiLab.')
 else:
@@ -15,12 +15,12 @@ else:
     S = requests.Session()
     URL = "http://wikilab.myhumankit.org/api.php"
     text = '''== Description du projet ==
-{{ cookiecutter.short_description }}
+{{ cookiecutter.short_description|e }}
 
 == Liens utiles ==
-* [{{cookiecutter.geslab_url}} Page du projet sur le GesLab]
-* [{{cookiecutter.framateam_url}} Canal de discussion du projet sur Framateam]
-* [{{cookiecutter.docs_url}} Documentation finale du projet]
+* [{{cookiecutter.geslab_url|e}} Page du projet sur le GesLab]
+* [{{cookiecutter.framateam_url|e}} Canal de discussion du projet sur Framateam]
+* [{{cookiecutter.docs_url|e}} Documentation finale du projet]
 * [https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.generic_name}} Dépôt GitHub du projet]
 
 == Cahier des charges ==
@@ -32,7 +32,7 @@ else:
 * Contributeurs
 * Animateur (coordinateur du projet)
 * Fabmanager référent
-** {{cookiecutter.full_name}} ([mailto:{{cookiecutter.email}}?Subject=%5B{{cookiecutter.generic_name}}%5D%20demande%20d%27information {{cookiecutter.email}}])
+** {{cookiecutter.full_name|e}}
 * Responsable de documentation
 
 == Matériel nécessaire ==
@@ -101,7 +101,7 @@ else:
                 # Step 4: Send a post request to edit a page
                 PARAMS_4 = {
                     "action": "edit",
-                    "title": "Projets:{{cookiecutter.project_name}}",
+                    "title": "Projets:{{cookiecutter.wikilab_name|e}}",
                     "format": "json",
                     "text": text,
                     "token": CSRF_TOKEN
@@ -115,8 +115,8 @@ else:
 
 
 # on crée le dépôt GitHub
-# on s'assure que le json est valid
-data = json.loads('{"name":"{{cookiecutter.generic_name}}","description":"{{cookiecutter.short_description}}","homepage":"{{cookiecutter.docs_url}}"}')
+# on s'assure que le json est valide
+data = json.loads('{"name":"{{cookiecutter.generic_name}}","description":"{{cookiecutter.short_description|e}}","homepage":"{{cookiecutter.docs_url|e}}"}')
 data = json.dumps(data)
 r = requests.post('https://api.github.com/orgs/{{cookiecutter.github_organization}}/repos',
                   data = data,
@@ -151,13 +151,13 @@ print('#########################################################################
 print('# Ajouter manuellement les liens suivants dans la page du projet sur le GesLab #')
 print('################################################################################')
 print('Intitulé : Page du projet sur wikilab')
-print('URL      : {{cookiecutter.wikilab_url}}')
+print('URL      : {{cookiecutter.wikilab_url|e}}')
 print('--------------------------------------------------------------------------------')
 print('Intitulé : Canal de discussion du projet sur Framateam')
-print('URL      : {{cookiecutter.framateam_url}}')
+print('URL      : {{cookiecutter.framateam_url|e}}')
 print('--------------------------------------------------------------------------------')
 print('Intitulé : Documentation du projet')
-print('URL      : {{cookiecutter.docs_url}}')
+print('URL      : {{cookiecutter.docs_url|e}}')
 print('--------------------------------------------------------------------------------')
 print('Intitulé : Dépôt GitHub du projet')
 print('URL      : https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.generic_name}}')
@@ -165,6 +165,6 @@ print('#########################################################################
 print('# Créer un nouveau canal sur l\'équipe My Human Kit de Framateam                #')
 print('################################################################################')
 print('Nom         : {{cookiecutter.generic_name}}')
-print('Description : {{cookiecutter.short_description}}')
-print('Entête      : [{{cookiecutter.project_name}}](https://dev.humanlab.me/projet/{{cookiecutter.generic_name}}/)')
+print('Description : {{cookiecutter.short_description|e}}')
+print('Entête      : [{{cookiecutter.project_name|e}}](https://dev.humanlab.me/projet/{{cookiecutter.generic_name}}/)')
 print('--------------------------------------------------------------------------------')

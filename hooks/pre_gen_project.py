@@ -20,7 +20,7 @@ else:
 # si non :
 #     -> message : "ERROR: please create this project on GesLab first!"
 #     -> abort
-geslab_url = '{{ cookiecutter.geslab_url }}'
+geslab_url = '{{ cookiecutter.geslab_url|e }}'
 r = requests.get(geslab_url)
 print(r.status_code)
 if not r.status_code == 200:
