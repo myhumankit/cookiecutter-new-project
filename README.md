@@ -2,27 +2,24 @@
 [Cookiecutter](https://github.com/audreyr/cookiecutter) template to create a new MHK project.
 
 ## Features
- * Run usefull commands to generate all the tool stack for a new MHK project (GesLab, wikilab, Framateam, etc.);
- * Initialize a Git ripository with all the requirements for a new documentation project with [myworkshop](https://github.com/myhumankit/myworkshop).
+ * Test if the new project already exists on GesLab (required), GitHub (forbiden) and wikilab (optionnal);
+ * Initialize a Git ripository with all the requirements for a new documentation project with [myworkshop](https://github.com/myhumankit/myworkshop);
+ * Create a new wikilab page if required.
 
 ## Getting started
 
 ### Requirements
- * git 2.17.1 or higher (package _git_);
- * python 3.6.7 or higher (package _python3_);
- * pip 19.0.1 or higher (package _python3-pip_);
- * coockiecutter 1.6.0 or higher;
- * requests 2.18.4 or higher.
-
-Install the latest Cookiecutter (if you haven't installed it yet!) and _requests_ :
+Please install the latest [new-project Makefile](https://github.com/myhumankit/new-project) (if you haven't installed it yet!) :
 
 ```
-sudo pip3 install cookiecutter
-sudo pip3 install requests
+$ cd ~/dev/
+$ git clone git@github.com:myhumankit/new-project.git
+$ cd new-project/
+$ make install
 ```
 
 ### Configuration
-By default Cookiecutter tries to retrieve settings from a _.cookiecutterrc_ file in your home directory. Please create this file with some default settings :
+By default, Cookiecutter tries to retrieve settings from a _.cookiecutterrc_ file in your home directory. Please create this file with some default settings :
 
 ```
 default_context:
@@ -37,10 +34,17 @@ default_context:
 A _Personal access token_ is required to automatically create a new GitHub repository with this Cookiecutter template. Please generate a new token in _Settings/Developer settings/Personal access tokens_ with the _repo_ access (_Full control of private repositories_).
 
 ### Usage
-Generate a new project:
+Generate a new project with [new-project Makefile](https://github.com/myhumankit/new-project):
 
 ```
-cookiecutter https://github.com/myhumankit/cookiecutter-new-project.git
+$ cd ~/dev/
+$ make new
+```
+
+Or generate a new project directly with cookiecutter:
+
+```
+$ cookiecutter https://github.com/myhumankit/cookiecutter-new-project.git
 ```
 
 ## Tech/framework used
