@@ -7,7 +7,7 @@
  * [documentation du projet]({{cookiecutter.docs_url}})
  * [page d'accueil du projet sur le GesLab]({{cookiecutter.geslab_url}})
  * [page wiki du projet sur le wiki du Humanlab]({{cookiecutter.wikilab_url}})
- * [canal de discussion sur Framateam]({{cookiecutter.framateam_url}})
+{% if cookiecutter.framateam_channel_creation == 'yes' %} * [canal de discussion sur Framateam]({{cookiecutter.framateam_url}}){% endif %}
 
 ## Fonctionnalités
 Ce dépôt GitHub est principalement utilisé pour stocker l'ensemble des informations (documents, modèles 3D, code, plans, etc.) nécessaires au projet _{{cookiecutter.project_name}}_.
@@ -46,7 +46,7 @@ Ce projet est diffusé sous la licence MIT. Voir le fichier [LICENSE](LICENSE) p
  * [Documentation page of the project]({{cookiecutter.docs_url}})
  * [Home page of the project on GesLab]({{cookiecutter.geslab_url}})
  * [Page of the project on the wiki of the Humanlab]({{cookiecutter.wikilab_url}})
- * [Framateam collaboration channel]({{cookiecutter.framateam_url}})
+{% if cookiecutter.framateam_channel_creation == 'yes' %} * [Framateam collaboration channel]({{cookiecutter.framateam_url}}){% endif %}
 
 ## Features
 This very GitHub repository is used to collect all available information (documents, 3D models, code, blueprints, etc.) regarding the project _{{cookiecutter.project_name}}_.

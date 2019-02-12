@@ -19,11 +19,11 @@
                 "title": "page wiki du projet sur le wiki du Humanlab",
                 "fa5_icon": "fab fa-wikipedia-w"
             },
-            {
+            {% if cookiecutter.framateam_channel_creation == 'yes' %}{
                 "url": "{{ cookiecutter.framateam_url }}",
                 "title": "canal de discussion sur Framateam",
                 "fa5_icon": "fas fa-comments"
-            },
+            },{% endif %}
             {
                 "url": "https://github.com/{{ cookiecutter.github_organization }}/{{ cookiecutter.generic_name }}",
                 "title": "code source de la documentation sur GitHub",

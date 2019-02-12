@@ -19,9 +19,9 @@ else:
 
 == Liens utiles ==
 * [{{cookiecutter.geslab_url|e}} Page du projet sur le GesLab]
-* [{{cookiecutter.framateam_url|e}} Canal de discussion du projet sur Framateam]
 * [{{cookiecutter.docs_url|e}} Documentation finale du projet]
 * [https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.generic_name}} Dépôt GitHub du projet]
+{% if cookiecutter.framateam_channel_creation == 'yes' %}* [{{cookiecutter.framateam_url|e}} Canal de discussion du projet sur Framateam]{% endif %}
 
 == Cahier des charges ==
 
@@ -153,14 +153,17 @@ print('#########################################################################
 print('Intitulé : Page du projet sur wikilab')
 print('URL      : {{cookiecutter.wikilab_url|e}}')
 print('--------------------------------------------------------------------------------')
+{% if cookiecutter.framateam_channel_creation == 'yes' %}
 print('Intitulé : Canal de discussion du projet sur Framateam')
 print('URL      : {{cookiecutter.framateam_url|e}}')
 print('--------------------------------------------------------------------------------')
+{% endif %}
 print('Intitulé : Documentation du projet')
 print('URL      : {{cookiecutter.docs_url|e}}')
 print('--------------------------------------------------------------------------------')
 print('Intitulé : Dépôt GitHub du projet')
 print('URL      : https://github.com/{{cookiecutter.github_organization}}/{{cookiecutter.generic_name}}')
+{% if cookiecutter.framateam_channel_creation == 'yes' %}
 print('################################################################################')
 print('# Créer un nouveau canal sur l\'équipe My Human Kit de Framateam                #')
 print('################################################################################')
@@ -168,3 +171,4 @@ print('Nom         : {{cookiecutter.generic_name}}')
 print('Description : {{cookiecutter.short_description|e}}')
 print('Entête      : [{{cookiecutter.project_name|e}}](https://dev.humanlab.me/projet/{{cookiecutter.generic_name}}/)')
 print('--------------------------------------------------------------------------------')
+{% endif %}

@@ -3,6 +3,7 @@
   "generic_name": "{{ cookiecutter.project_name|slug }}",
   "wikilab_name": "{{ cookiecutter.project_name|replace(' ', '_')|slug|capitalize }}",
   "short_description": "Un super projet pour partir à la conquête du monde !",
+  "framateam_channel_creation": ["yes", "no"],
   "full_name": "",
   "email": "",
   "github_username": "",
