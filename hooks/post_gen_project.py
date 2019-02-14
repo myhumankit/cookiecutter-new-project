@@ -169,6 +169,6 @@ print('# Créer un nouveau canal sur l\'équipe My Human Kit de Framateam       
 print('################################################################################')
 print('Nom         : {{cookiecutter.generic_name}}')
 print('Description : {{cookiecutter.short_description|e}}')
-print('Entête      : [{{cookiecutter.project_name|e}}](https://dev.humanlab.me/projet/{{cookiecutter.generic_name}}/)')
+print('Entête      : [{{cookiecutter.project_name|e}}]({{cookiecutter.geslab_url}}/)')
 print('--------------------------------------------------------------------------------')
 {% endif %}
