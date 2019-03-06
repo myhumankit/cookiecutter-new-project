@@ -1,7 +1,10 @@
 # {{cookiecutter.project_name}}
+![proto](https://img.shields.io/badge/proto-en%20cours-orange.svg "proto")
+![doc](https://img.shields.io/badge/doc-en%20cours-orange.svg "doc")
+
 {{cookiecutter.short_description}}
 
-![featured_image](images/mhk_logotype.png)
+![featured_image](https://raw.githubusercontent.com/myhumankit/myworkshop/master/images/default_featured_image.jpg)
 
 ## Liens
  * [documentation du projet]({{cookiecutter.docs_url}})
