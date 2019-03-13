@@ -6,6 +6,7 @@
         "lang": "{{ cookiecutter.language_code }}",
         "license": "CC BY",
         "about": "{{ cookiecutter.short_description }}",
+        "status": "draft",
         "links": [
             {
                 "url": "{{ cookiecutter.geslab_url }}",
